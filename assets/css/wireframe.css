@@ -1,0 +1,22 @@
+body {
+  font-family: "Inter", sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+.v-btn {
+  background: none !important;
+  border: 1px solid #000 !important;
+  color: #000 !important;
+  box-shadow: none !important;
+}
+
+.v-card {
+  border: 1px dashed #999 !important;
+  background-color: transparent !important;
+}
+
+.v-text-field input {
+  border: 1px solid #000 !important;
+  background: none !important;
+}
