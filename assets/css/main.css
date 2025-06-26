@@ -20,3 +20,16 @@ body {
   border: 1px solid #000 !important;
   background: none !important;
 }
+
+.custom-ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 表示する行数を調整 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.custom-ellipsis::after {
+  content: "..."; /* ← 省略記号を明示的に指定 */
+}

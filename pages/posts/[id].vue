@@ -1,13 +1,21 @@
-<template>
-  <v-container v-if="post">
-    <h1 v-html="post.title.rendered" />
-    <div v-html="post.content.rendered" />
-  </v-container>
-</template>
+<script setup>
+import { useRoute } from "vue-router";
 
-<script setup lang="ts">
 const route = useRoute();
+const postId = route.params.id;
+
 const { data: post } = await useFetch(
-  `https://example.com/wp-json/wp/v2/posts/${route.params.id}`
+  `https://xs666826.xsrv.jp/wp-json/wp/v2/posts/${postId}`
 );
 </script>
+
+<template>
+  <v-container>
+    <v-card>
+      <v-card-title v-html="post?.title.rendered" />
+      <v-card-text>
+        <div v-html="post?.content.rendered" />
+      </v-card-text>
+    </v-card>
+  </v-container>
+</template>
