@@ -10,9 +10,14 @@ export const usePosts = async () => {
           post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
           "/PXL_20250506_070000812.MP.png";
 
+        // カテゴリー名の取得
+        const categories = post._embedded?.["wp:term"]?.[0] ?? [];
+        const categoryNames = categories.map((cat: any) => cat.name);
+
         return {
           ...post,
-          featuredImage: image,
+          contensImage: image,
+          categoryNames,
           excerpt: {
             ...post.excerpt,
             rendered: post.excerpt.rendered

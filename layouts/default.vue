@@ -14,13 +14,14 @@ const items = [
 </script>
 
 <template>
-  <v-app>
+  <v-app class="bg-grey-lighten-4">
     <v-navigation-drawer
       v-model="drawer"
-      :clipped="clipped"
       location="right"
-      fixed
-      app
+      asolute
+      temporary
+      clipped
+      class="header-navgation"
     >
       <v-list>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router>
@@ -32,11 +33,11 @@ const items = [
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app :clipped-left="clipped" fixed>
+    <v-app-bar app absolute clipped class="header-bar">
       <v-spacer />
       <v-toolbar-title class="text-center">{{ title }}</v-toolbar-title>
       <v-spacer />
-      <v-app-bar-nav-icon @click="drawer = !drawer" />
+      <v-app-bar-nav-icon @click="drawer = !drawer" class="header-btn" />
     </v-app-bar>
 
     <v-main>
@@ -45,10 +46,31 @@ const items = [
       </v-container>
     </v-main>
 
-    <v-footer :absolute="!fixed" app>
+    <v-footer :absolute="!fixed" app class="footer-bar">
       <v-spacer />
       <span>&copy; {{ new Date().getFullYear() }}</span>
       <v-spacer />
     </v-footer>
   </v-app>
 </template>
+
+<style>
+.v-app-bar.header-bar {
+  background-color: #dbd4ba;
+  color: #333333;
+}
+
+.v-btn.header-btn {
+  border: none;
+  color: #333333;
+}
+
+.v-navigation-drawer.header-navgation {
+  background-color: #dbd4ba;
+  color: #333333;
+}
+
+.footer-bar {
+  background-color: #dbd4ba;
+}
+</style>
