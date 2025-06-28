@@ -7,10 +7,7 @@ const drawer = ref(false);
 const fixed = ref(false);
 const title = "My Blog";
 
-const items = [
-  { icon: "mdi-home", title: "Welcome", to: "/" },
-  { icon: "mdi-post", title: "Blog", to: "/blog" },
-];
+const items = [{ icon: "mdi-home", title: "Welcome", to: "/" }];
 </script>
 
 <template>

@@ -12,5 +12,13 @@ export default defineNuxtConfig({
   vite: {
     plugins: [vuetify({ autoImport: true })],
   },
-  compatibilityDate: "2025-06-03", // 推奨される日付の追加
+  ssr: true,
+  nitro: {
+    preset: "static",
+  },
+  app: {
+    baseURL: "/blog/",
+  },
+
+  compatibilityDate: "2025-06-03",
 });

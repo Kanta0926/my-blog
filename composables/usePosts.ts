@@ -1,3 +1,5 @@
+// カテゴリーの全記事取得
+
 export const usePosts = async () => {
   const { data } = await useFetch<any[]>(
     "https://xs666826.xsrv.jp/wp-json/wp/v2/posts?_embed&categories=4,8"
