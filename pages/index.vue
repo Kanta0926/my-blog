@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const posts = await usePosts();
+const { data: posts, pending, error } = await usePosts();
+// const image = useAsset("/6b25b2a9-f2c4-49d1-88d8-24c5e8c31c441.jpg");
 
 function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
@@ -15,6 +16,7 @@ function formatDate(dateStr: string): string {
       cover
       class="mb-6"
     ></v-img>
+    <!-- <v-img :src="image" height="300px" cover class="mb-6"></v-img> -->
 
     <v-row>
       <!-- サイドバー -->
@@ -33,7 +35,7 @@ function formatDate(dateStr: string): string {
               >
                 <!-- サムネイル画像 -->
                 <div style="position: relative">
-                  <v-img :src="post.contensImage" height="180px" cover />
+                  <v-img :src="post.contentsImage" height="180px" cover />
 
                   <!-- カテゴリー名（右上に表示） -->
                   <div

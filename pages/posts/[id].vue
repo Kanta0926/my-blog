@@ -20,7 +20,7 @@ const post = await usePostById(postId);
 
           <div class="">
             <!-- サムネ -->
-            <v-img :src="post.contensImage" height="20rem" cover />
+            <v-img :src="post.contentsImage" height="20rem" cover />
 
             <!-- カテゴリー -->
             <div
@@ -41,7 +41,7 @@ const post = await usePostById(postId);
           </div>
 
           <v-card-text>
-            <div v-html="post?.content.rendered" />
+            <div v-html="post?.content.rendered" class="prose code-container" />
           </v-card-text>
         </v-card>
       </v-col>
@@ -63,5 +63,13 @@ const post = await usePostById(postId);
   line-height: 2.4;
   font-size: 1rem;
   padding: 1.6rem;
+}
+
+.code-container pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
 }
 </style>
